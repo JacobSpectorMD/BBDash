@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+.wrapper > div {
+  border-radius: 5px;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  grid-auto-rows: 1%;
+  width:93%;
+  padding-left: 34px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin:auto;
+  font-family: "Arial";
+}
+
+.search-button{
+    grid-row: 2;
+    grid-column: 3/5;        
+}
+.search-button > button{
+    background-color: rgba(212,43,0, 1);
+    border: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 3px;
+    padding: 15px;
+}
+
+.search-button > button:hover{
+    background-color: rgba(212,43,0, 0.7);
+}
+
+.search-sort{
+    width:93%;
+    margin:auto; 
+    padding-top: 5px;       
+}
+
+.search-sort > button{
+    width: 49%;
+    height: 8%; 
+    color: white;
+    font-size: 30px;
+    border: 0px;      
+}
+#nav-search{
+    background-color: rgba(212,43,0, 0.2);        
+}
+#nav-search:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid black;        
+}
+#nav-sort{
+    background-color: rgba(212,43,0, 1);        
+}
+
+</style>
+<body id="body">
+<div class="search-sort">
+<button onclick="location.href='/utilization/'" id="nav-search">Search</button>
+<button onclick="location.href='/utilization/sort/'" id="nav-sort">Sort</button>
+</div>
+<div class="wrapper" id="wrapper">
+
+<div class="search-button"><button onclick="add_graphics()">Sort</button></div>
+</div>
+</body>
+{% include "js_utilization.html" %}
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .platelets {
+    width: 100%;
+    font-family: sans-serif;
+    padding-top: 10px;
+    }
+
+    .outline > td{
+        border: 1px solid black;
+    }
+    #platelet-table{
+        width: 93%;
+        margin: auto;
+        padding-top: 5px;
+    }
+</style>
+<div id="platelet-table">
+<table class="platelets">
+    <tr>
+        <td><b>Expiring Today</b></td>
+    </tr>
+    <tr>
+        <td>Patient Name</td>
+        <td>MRN</td>
+        <td>Product</td>
+        <td>Blood Type</td>
+        <td>Expiration</td>
+    </tr>
+    <tr class="outline">
+        <td>Fake, Guy</td>
+        <td>12345678</td>
+        <td>Platelet</td>
+        <td>O+</td>
+        <td bgcolor="red">5/30/2018 23:59</td>
+    </tr>
+</table>
+<br><br>
+<table class="platelets">
+    <tr>
+        <td><b>Other Units</b></td>
+    </tr>
+    <tr>
+        <td>Patient Name</td>
+        <td>MRN</td>
+        <td>Product</td>
+        <td>Blood Type</td>
+        <td>Expiration</td>
+    </tr>
+    <tr class="outline">
+        <td>Fake, Guy</td>
+        <td>12345678</td>
+        <td>Platelet</td>
+        <td>O+</td>
+        <td>5/31/2018 23:59</td>
+    </tr>
+    <tr class="outline">
+        <td>Fake, Female</td>
+        <td>22222222</td>
+        <td>Platelet</td>
+        <td>B+</td>
+        <td>5/31/2018 23:59</td>
+    </tr>
+</table>
+</div>
+{% endblock %}

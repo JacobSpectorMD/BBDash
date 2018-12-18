@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<head>
+    <link href="{% static 'dropzone.css' %}" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'css/utilization.css' %}"/>
+    <script src="{% static 'dropzone.js'%}"></script>
+    <script src="{% static 'utilization.js'%}"></script>
+    <script src="{% static 'd3.min.js'%}"></script>
+    <script src="{% static 'd3-tip.js'%}"></script>
+    <script src="{% static 'jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'FileSaver.js'%}"></script>
+</head>
+
+<body id="body">
+<div class="search-sort">
+    <button onclick="location.href='/utilization/'" id="nav-search">Search</button>
+    <button onclick="location.href='/utilization/sort/'" id="nav-sort">Sort</button>
+</div>
+<div class="wrapper" id="wrapper">
+    <div class="products"><p>
+        Products
+        </br>
+        <select id="product_box">
+            <option value="ALL">All Blood Products</option>
+            <option value="RBC">Red Blood Cells</option>
+            <option value="PLATELET">Platelets</option>
+            <option value="Plasma">Plasma</option>
+            <option value="CRYOPRECIPITATE">Cryoprecipitate</option>
+        </select>
+        </p>
+    </div>
+    <div class="search-box"><p>Location</br><input id="location_box"></input></p></div>
+    <div class="search-box"><p>Specialty</br><input id="specialty_box"></input></p></div>
+    <div class="search-box"><p>Units On Date</br><input id="per_day_box"></input></p></div>
+    <div class="search-box"><p>Start Date</br><input type="date" id="start_date_box"></input></p></div>
+    <div class="search-box"><p>End Date</br><input type="date" id="end_date_box"></input></p></div>
+    <div class="search-button"><button onclick="add_graphics()">Search</button></div>
+    <div id="data_input">
+        <form action="/utilization/file_upload/" class="dropzone" id="transfusion_dropzone" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        </form>
+    </div>
+</div>
+</body>
+{% endblock %}

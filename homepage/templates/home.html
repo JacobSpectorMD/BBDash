@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+.wrapper > div {
+  border-radius: 5px;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: 12% 1fr 1fr 1fr;
+  width:93%;
+  max-height: 88%;
+  margin:auto;
+  font-family: "Arial";
+}
+.app1:hover, .app2:hover{
+    opacity: 0.6;            
+}
+
+.app1 { 
+  grid-column: 1;
+  grid-row: 2;
+  justify-content: center;
+}
+.app2 {
+  grid-column: 2;
+  grid-row: 2;
+  justify-content: center;
+}
+.app3 {
+  grid-column: 3;
+  grid-row: 2;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.app4 {
+  grid-column: 1;
+  grid-row: 3;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.app5 {
+  grid-column: 2;
+  grid-row: 3;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.app6 {
+  grid-column: 3;
+  grid-row: 3;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.app7 {
+  grid-column: 1;
+  grid-row: 4;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.app8 {
+  grid-column: 2;
+  grid-row: 4;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.app9 {
+  grid-column: 3;
+  grid-row: 4;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+</style>
+
+<div class="wrapper">
+  <div class="app1">
+      <a href="/utilization/">
+      <img class="app-graphic" src="/static/utilization.svg"/>
+      </a>
+  </div>
+  <div class="app2">
+      <a href="/platelets/">
+      <img class="app-graphic" src="/static/platelets.svg"/>
+      </a>
+  </div>
+  <div class="app3"></div>
+  <div class="app4"></div>
+  <div class="app5"></div>
+  <div class="app6"></div>
+  <div class="app7"></div>
+  <div class="app8"></div>
+  <div class="app9"></div>
+</div>
+
+{% endblock %}
