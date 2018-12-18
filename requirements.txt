@@ -5,5 +5,4 @@ numpy==1.14.2
 Pillow==5.0.0
 psycopg2==2.7.4
 pytz==2018.3
-Weill-Bioscreen==0.1
 whitenoise==3.3.1
