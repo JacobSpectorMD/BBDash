@@ -30,10 +30,10 @@ def meets_criteria(col, products, per_day, start_date, end_date):
     print(col)
     if '-' in col[3]:
         date = col[3].split("-")
+        transfusion_date = datetime.date(int(date[0]), int(date[1]), int(date[2]))
     elif '/' in col[3]:
         date = col[3].split('/')
-        print(date)
-    transfusion_date = datetime.date(int(date[2]), int(date[0]), int(date[1]))
+        transfusion_date = datetime.date(int(date[2]), int(date[0]), int(date[1]))
     if start_date and transfusion_date < start_date:
         return False
     if end_date and transfusion_date > end_date:
