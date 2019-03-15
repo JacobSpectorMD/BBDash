@@ -1,4 +1,6 @@
-try:
-    from .local import *
-except:
-    from .production import *
+from .production import *
+
+# try:
+#     from .local import *
+# except:
+#     from .production import *
