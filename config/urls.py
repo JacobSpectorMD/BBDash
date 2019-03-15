@@ -9,4 +9,4 @@ urlpatterns = [
     url(r'^utilization/', include("utilization.urls")),
     url(r'^platelets/', include("platelets.urls")),
     
-] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
