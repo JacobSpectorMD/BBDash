@@ -1,3 +1,5 @@
+Dropzone.autoDiscover = false;
+
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -20,6 +22,8 @@ window.onload = function(){
     $('#transfusion_dropzone').dropzone({
         dictDefaultMessage: 'Drop transfusion file (or click)',
         url: '/utilization/file_upload/',
+        thumbnailWidth  : '50',
+        thumbnailHeight : '50',
         headers: {'X-CSRFToken': csrftoken},
         accept: function(file, done){
             var lower_name = file.name.toLowerCase();
@@ -30,7 +34,6 @@ window.onload = function(){
             }
         },
         success: function(file, data){
-            console.log(data);
             var specialty_select = document.getElementById('specialty_box');
             var option = document.createElement('option');
             option.text = '';
@@ -54,8 +57,12 @@ window.onload = function(){
                 option.value = location;
                 location_select.add(option);
             })
-        }
-    });
+//            $(file.previewElement).fadeOut(2000);
+        },
+        complete: function(file){
+
+        },
+    })
 }
 
 function add_graphics(){

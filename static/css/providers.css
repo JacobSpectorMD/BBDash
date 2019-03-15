@@ -3,11 +3,16 @@
 }
 
 .box, .median {cursor: pointer;}
-#menu {margin-bottom: 0.5em;}
+#menu {margin-bottom: 0.5em; margin-top: 0.5em; height: 2.5em;}
 
 #draw-button {
     background-color: white;
     border: 1px solid var(--red);
     border-radius: 4px;
     color: var(--red);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
+
+#draw-button:hover {background-color: var(--red); color: white;}

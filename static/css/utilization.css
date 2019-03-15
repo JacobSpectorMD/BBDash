@@ -125,3 +125,9 @@ div select {width: 100%}
     color: white;
     background-color: var(--red);
 }
+
+.dropzone {
+    min-height: 100px;
+}
+
+.dz-preview {margin: 5px;}

@@ -38,6 +38,8 @@ function create_provider_graph(data, filters){
     // Figure out what test to look at based on what product is selected
     var product_to_test = {'cryo': 'fibrinogen_', 'plasma': 'prothrombin_', 'platelets': 'platelet_',
                            'rbcs': 'hemoglobin_'};
+    var test_name = {'cryo': 'Fibrinogen', 'plasma': 'Prothrombin', 'platelets': 'Platelets',
+        'rbcs': 'Hemoglobin'};
     var lab = product_to_test[filters.product];
 
     var product_names = {'cryo': 'CRYOPPT', 'plasma': 'PLASMA', 'platelets': 'PLATELETS', 'rbcs': 'RED CELLS'};
@@ -59,7 +61,6 @@ function create_provider_graph(data, filters){
 
     // Sort the providers by highest median test value
     filtered_providers.sort(function(a, b){ return b[lab+'med'] - a[lab+'med'] });
-    console.log(filtered_providers)
 
     var provider_names = filtered_providers.map(x => x.name);
 
@@ -107,6 +108,13 @@ function create_provider_graph(data, filters){
         var tick_spacing = width;
     }
     var data_g = svg.append('g');
+
+    var test_label = data_g.append('text')
+        .text(test_name[filters.product])
+        .attr('x', 0).attr('y', 0)
+        .attr('text-anchor', 'middle').attr('alignment-baseline', 'middle')
+        .attr('transform', 'translate(12, '+(height/2 - 80)+') rotate(-90 0 0)');
+
     var overall_median = data_g.append('line')
         .attr('x1', 50).attr('x2', width)
         .attr('y1', y(data[product_name].median)).attr('y2', y(data[product_name].median))
@@ -144,12 +152,12 @@ function create_provider_graph(data, filters){
                 if (d.name==selected_provider){return 'var(--red)'}
                 else { return '#97C7EF'}
             })
-            .attr('x', function(d){ return x(d.name) + tick_spacing/2 - 3 })
+            .attr('x', function(d){ return x(d.name) + tick_spacing/2 - 5 })
             .attr('y', function(d){ return y(d[lab+'max']) })
             .attr('height', function(d){
                 return y(d[lab+'min']) - y(d[lab+'max']);
             })
-            .attr('width', 6)
+            .attr('width', 10)
             .attr('data-specialty', function(d){ return d.specialty })
             .attr('data-provider', function(d){ return d.name });
 
@@ -158,7 +166,7 @@ function create_provider_graph(data, filters){
         .enter()
         .append('circle')
             .attr('class', 'median')
-            .attr('r', '3')
+            .attr('r', '4')
             .attr('cx', function(d){ return x(d.name) + tick_spacing/2 })
             .attr('cy', function(d){return y(d[lab+'med'])})
             .attr('data-specialty', function(d){ return d.specialty });;

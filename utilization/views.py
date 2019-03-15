@@ -27,12 +27,13 @@ def utilization_data(request):
     per_day = request.GET.get("per_day", None)
     start_date = request.GET.get("start_date", None)
     end_date = request.GET.get("end_date", None)
+    print(request)
     try:
         filepath = request.session['filepath']
         json_string = get_utilization_data(filepath, products, location, specialty, per_day,
                                            start_date, end_date)
         return JsonResponse(json_string, safe=False)
-    except:
+    except KeyError:
         return JsonResponse("Please upload your deidentified trial output file")
 
 
