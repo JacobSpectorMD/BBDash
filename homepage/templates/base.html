@@ -1,16 +1,19 @@
+{% load static %}
 
-<style>
-.header {
-  width: 93%;
-  margin:auto;
-  align-content: flex-start;
-  grid-column: 1 / 4;
-  grid-row: 1;
-}
-body{
-    width: calc(100vw - 34px);     
-}
-</style>
+{% block style %}
+    <link href="{% static 'import/bootstrap.min.css'%}" type="text/css" rel="stylesheet">
+    <link href="{% static 'import/dropzone.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'css/base.css' %}" type="text/css" rel="stylesheet"/>
+{% endblock style %}
+
+{% block scripts %}
+    <script src="{% static 'import/d3.min.js' %}"></script>
+    <script src="{% static 'import/d3-tip.js' %}"></script>
+    <script src="{% static 'import/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'import/bootstrap.min.js'%}"></script>
+    <script src="{% static 'import/dropzone.js' %}"></script>
+    <script src="{% static 'import/FileSaver.js' %}"></script>
+{% endblock scripts %}
 
 <body>
   <div class="header">
@@ -19,4 +22,5 @@ body{
 
 {% block content %}
 {% endblock %}
+
 </body>

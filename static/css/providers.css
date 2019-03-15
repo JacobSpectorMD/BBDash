@@ -1,0 +1,13 @@
+#title-div {
+    text-align: center;
+}
+
+.box, .median {cursor: pointer;}
+#menu {margin-bottom: 0.5em;}
+
+#draw-button {
+    background-color: white;
+    border: 1px solid var(--red);
+    border-radius: 4px;
+    color: var(--red);
+}

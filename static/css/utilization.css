@@ -1,3 +1,7 @@
+:root{
+    --red: rgba(212,43,0, 1);
+}
+
 .axis path,
 .axis line {
   fill: none;
@@ -5,24 +9,10 @@
   shape-rendering: crispEdges;
 }
 
+div select {width: 100%}
+
 .axis text {
   font: 10px sans-serif;
-}
-
-.wrapper > div {
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-}
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
-  width:93%;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  margin:auto;
-  font-family: "Arial";
 }
 
 .search-button{
@@ -33,7 +23,7 @@
     background-color: rgba(212,43,0, 1);
     border: none;
     color: white;
-    font-size: 20px;
+    font-size: 1em;
     border-radius: 3px;
     padding: 15px;
 }
@@ -78,6 +68,8 @@
 
 #transfusion_dropzone{
     width: 100%;
+    height: 6em;
+    border: 2px dashed red;
 }
 
 .transfusion:hover{
@@ -114,4 +106,22 @@
   margin: -1px 0 0 0;
   top: 100%;
   left: 0;
+}
+
+
+#button-div > button {
+    background-color: white;
+    border: 1px solid var(--red);
+    border-radius: 4px;
+    width: 20%;
+    cursor: pointer;
+}
+
+#button-div > button:not(.active) {
+    color: var(--red);
+}
+
+#button-div > button:not(.active):hover {
+    color: white;
+    background-color: var(--red);
 }

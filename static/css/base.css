@@ -1,0 +1,40 @@
+.row {margin-left: 0;}
+.app {
+    text-align: center;
+}
+
+.app a {
+    width: 100%;
+}
+
+.app-img-div {
+    width: 80%;
+    border: 2px solid var(--red);
+}
+
+.header {
+  width: 100%;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 5px;
+}
+
+body {
+    width: calc(100vw - 34px);
+}
+
+.nav-btn {width: 100%;}
+.nav-btn:not(.active) {
+    border: 1px solid black;
+    color: black;
+}
+
+.nav-btn:not(.active):hover {
+    background-color: black;
+    color: white;
+}
+
+.nav-btn.active {
+    background-color: black;
+    color: white;
+}

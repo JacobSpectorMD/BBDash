@@ -1,0 +1,45 @@
+{% extends 'utilization.html' %}
+{% load staticfiles %}
+
+
+{% block style %}
+{{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/providers.css' %}"/>
+{% endblock style %}
+
+
+{% block scripts %}
+{{ block.super }}
+    <script src="{% static 'js/providers.js'%}"></script>
+{% endblock %}
+
+
+{% block utilization_content %}
+<div id="menu" class="row">
+    <div id="examine" class="col-2">
+        Examine <br>
+        <select id="examine-select">
+            <option value="cryo">Cryoprecipitate</option>
+            <option value="plasma">Plasma</option>
+            <option value="platelets">Platelets</option>
+            <option value="rbcs">Red Blood Cells</option>
+        </select>
+    </div>
+    <div id="num-units" class="col-2">
+        >= X Number of Units <br>
+        <input id="num-units-input">
+    </div>
+    <div class="col-2">
+        <div style="vertical-align: middle;">
+            <button id="draw-button">Draw Graph</button>
+        </div>
+    </div>
+</div>
+
+<div id="container" class="row">
+    <div id="title-div" class="col-12"></div>
+    <div id="providers-container" class="col-12" style="overflow-x: auto;">
+        <svg id="providers-svg"></svg>
+    </div>
+</div>
+{% endblock %}
