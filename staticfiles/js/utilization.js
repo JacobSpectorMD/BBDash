@@ -22,7 +22,7 @@ window.onload = function(){
         url: '/utilization/file_upload/',
         thumbnailWidth  : '50',
         thumbnailHeight : '50',
-        headers: {'X-CSRFToken': getCookie('csrftoken')},
+        headers: {'X-CSRFToken': $("input[name='csrfmiddlewaretoken']").val()},
         accept: function(file, done){
             var lower_name = file.name.toLowerCase();
             if (!lower_name.includes('deidentified')) {
