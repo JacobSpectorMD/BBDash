@@ -1,7 +1,5 @@
 Dropzone.autoDiscover = false;
 
-var csrftoken = getCookie('csrftoken');
-console.log(csrftoken)
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -24,7 +22,7 @@ window.onload = function(){
         url: '/utilization/file_upload/',
         thumbnailWidth  : '50',
         thumbnailHeight : '50',
-        headers: {'X-CSRFToken': csrftoken},
+        headers: {'X-CSRFToken': getCookie('csrftoken')},
         accept: function(file, done){
             var lower_name = file.name.toLowerCase();
             if (!lower_name.includes('deidentified')) {
