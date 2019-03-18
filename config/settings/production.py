@@ -63,9 +63,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-DATABASE_URI = 'postgres://chrtnnwxhorayk:b6b08aadde88dfff64715f616e89e81cf218f75227e26ace31e8ba0902a79eb6@ec2-107-21-126-193.compute-1.amazonaws.com:5432/d9e9q6ovqf7qq9'
 DATABASES = {
-    'default': {dj_database_url.config(default=DATABASE_URI)}
+    'default': {dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
 }
 
 
