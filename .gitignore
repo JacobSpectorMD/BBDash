@@ -108,3 +108,4 @@ settings.py
 db.sqlite3
 .idea/
 media/*
+config/environmental_variables.py
