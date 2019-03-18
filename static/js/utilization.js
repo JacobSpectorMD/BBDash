@@ -1,5 +1,6 @@
 Dropzone.autoDiscover = false;
 
+var csrftoken = getCookie('csrftoken');
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -17,8 +18,6 @@ function getCookie(name) {
 }
 
 window.onload = function(){
-    var csrftoken = getCookie('csrftoken');
-
     $('#transfusion_dropzone').dropzone({
         dictDefaultMessage: 'Drop transfusion file (or click)',
         url: '/utilization/file_upload/',

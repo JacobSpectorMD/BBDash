@@ -45,8 +45,6 @@ def file_upload(request):
         if 'deidentified' not in newdoc.file.name.lower():
             return HttpResponse('The file name must contain the word "deidentified" and cannot contain any patient'
                                 'information')
-        if not os.path.exists(os.path.join(settings.BASE_DIR, 'media')):
-            os.mkdir(os.path.join(settings.BASE_DIR, 'media'))
         newdoc.save()
         filepath = newdoc.file.path
         request.session['filepath'] = filepath

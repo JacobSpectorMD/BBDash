@@ -107,3 +107,4 @@ settings.py
 .sqlite3
 db.sqlite3
 .idea/
+media/*
