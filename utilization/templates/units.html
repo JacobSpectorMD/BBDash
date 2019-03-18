@@ -1,16 +1,6 @@
 {% extends 'utilization.html' %}
 {% load static %}
 
-{% block style %}
-{{ block.super }}
-    <link rel="stylesheet" href="{% static 'css/utilization.css' %}"/>
-{% endblock style %}
-
-{% block scripts %}
-{{ block.super }}
-    <script src="{% static 'js/utilization.js'%}"></script>
-{% endblock %}
-
 {% block utilization_content %}
 <div class="row">
     <div class="products col-3"><p>

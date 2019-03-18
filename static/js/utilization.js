@@ -1,6 +1,7 @@
 Dropzone.autoDiscover = false;
 
 var csrftoken = getCookie('csrftoken');
+console.log(csrftoken)
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -65,12 +66,6 @@ window.onload = function(){
 }
 
 function add_graphics(){
-    $("body").bind("ajaxSend", function(elm, xhr, s){
-        if (s.type == "POST") {
-            xhr.setRequestHeader('X-CSRF-Token', getCSRFTokenValue());
-        }
-    });
-
     var products = document.getElementById("product_box").value,
         location = document.getElementById("location_box").value,
         specialty = document.getElementById("specialty_box").value,
