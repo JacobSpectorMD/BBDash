@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load static %}{% load widget_tweaks %}
+{% block styles %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock %}
+
+{% block content %}
+<head>
+    <title>BB Dash | Login</title>
+</head>
+
+<div class="outlined" style="width: 100%">
+Your email has been confirmed!<br>
+Your account will be reviewed by an administrator for approval, and you will receive an email once your account has been approved.
+</div>
+{% endblock %}

@@ -1,8 +1,12 @@
+import datetime
+from datetime import timedelta
+import os
+
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse
-import datetime, os
-from datetime import timedelta
+
 from utilization.models import Document
 from utilization.forms import FileUploadForm
 from utilization.utilization_calculator import get_utilization_data, process_file
