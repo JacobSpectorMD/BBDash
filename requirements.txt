@@ -13,7 +13,7 @@ django-widget-tweaks==1.4.3
 gunicorn==19.7.1
 numpy==1.14.2
 phonenumberslite==8.10.8
-Pillow==5.0.0
+Pillow==6.2.0
 psycopg2==2.7.7
 pytz==2018.3
 qrcode==6.1
